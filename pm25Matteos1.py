@@ -46,8 +46,8 @@ pm25 = PM25_UART(uart, reset_pin)
 #pm25 = PM25_I2C(i2c, reset_pin)
 
 print("Found PM2.5 sensor, reading data...")
-
-while True:
+print(time.time())
+while i<31:
     time.sleep(1)
 
     try:
@@ -78,3 +78,5 @@ while True:
     print("Particles > 5.0um / 0.1L air:", aqdata["particles 50um"])
     print("Particles > 10 um / 0.1L air:", aqdata["particles 100um"])
     print("---------------------------------------")
+    i += 1
+    print(time.time())

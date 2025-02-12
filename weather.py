@@ -12,7 +12,7 @@ bme680 = adafruit_bme680.Adafruit_BME680_I2C(i2c)
 bme680.sea_level_pressure = 1013.25
 
 run_duration = 10
-starti_time = time.time()
+start_time = time.time()
 i=0
 
 print("Starting sensor readings at:", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))

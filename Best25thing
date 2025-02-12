@@ -55,15 +55,14 @@ csvwriter.writerow(["Time","PM 1.0: %d\t","PM2.5: %d\t","PM10: %d","Particles > 
 i=0
 while i<31:
     time.sleep(1)
-
-#    try:
- #       aqdata = pm25.read()
-        # print(aqdata)
-#    except RuntimeError:
-  #      print("Unable to read from sensor, retrying...")
-      #  continue
+                                    #    try:
+                                     #       aqdata = pm25.read()
+                                            # print(aqdata)
+                                    #    except RuntimeError:
+                                      #      print("Unable to read from sensor, retrying...")
+                                          #  continue
     
-  csvwriter.writerow(time.time(),[aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], aqdata["particles 03um"], aqdata["particles 05um"], aqdata["particles 10um"], aqdata["particles 25um"], aqdata["particles 50um"], aqdata["particles 100um"]])
+    csvwriter.writerow(time.time(),[aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], aqdata["particles 03um"], aqdata["particles 05um"], aqdata["particles 10um"], aqdata["particles 25um"], aqdata["particles 50um"], aqdata["particles 100um"]])
     i += 1
 file.close()
 

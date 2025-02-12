@@ -62,7 +62,7 @@ while i<31:
                                       #      print("Unable to read from sensor, retrying...")
                                           #  continue
     
-    csvwriter.writerow(time.time(),[aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], aqdata["particles 03um"], aqdata["particles 05um"], aqdata["particles 10um"], aqdata["particles 25um"], aqdata["particles 50um"], aqdata["particles 100um"]])
+    csvwriter.writerow([time.time(),aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], aqdata["particles 03um"], aqdata["particles 05um"], aqdata["particles 10um"], aqdata["particles 25um"], aqdata["particles 50um"], aqdata["particles 100um"]])
     i += 1
 file.close()
 

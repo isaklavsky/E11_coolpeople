@@ -59,10 +59,10 @@ while i<31:
     i += 1
     try:
         aqdata = pm25.read()
-        # print(aqdata)
+        print(aqdata)
         #    except RuntimeError:
         #      print("Unable to read from sensor, retrying...")
         #  continue
-        csvwriter.writerow([Time,aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], aqdata["particles 03um"], aqdata["particles 05um"], aqdata["particles 10um"], aqdata["particles 25um"], aqdata["particles 50um"], aqdata["particles 100um"]])
+        # csvwriter.writerow([Time,aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], aqdata["particles 03um"], aqdata["particles 05um"], aqdata["particles 10um"], aqdata["particles 25um"], aqdata["particles 50um"], aqdata["particles 100um"]])
 file.close()
 

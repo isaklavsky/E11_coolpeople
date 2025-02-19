@@ -52,7 +52,7 @@ print(time.time())
 file = open('pm25.csv','w',newline = None)
 csvwriter = csv.writer(file,delimiter=',')
 csvwriter.writerow(["Time","PM 1.0: %d\t","PM2.5: %d\t","PM10: %d","Particles > 0.3um / 0.1L air", "Particles > 0.5um / 0.1L air","Particles > 1.0um / 0.1L air","Particles > 2.5um / 0.1L air","Particles > 5.0um / 0.1L air","Particles > 10um / 0.1L air"])
-
+print(sys.agrv)
 seconds_agrv = float(sys.argv[0])
 
 i=0

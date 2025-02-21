@@ -1,0 +1,56 @@
+import pandas as pd
+import math as math
+import numpy as np
+import time
+import matplotlib.pyplot as plt
+
+insidedata = pd.read_csv("inside.csv")
+outsidedata = pd.read_csv("outside.csv")
+
+print(insidedata)
+
+columnstodrop = [
+    "PM2.5",  
+    "PM10",  
+    "Particles > 2.5um / 0.1L air",
+    "Particles > 5.0um / 0.1L air",
+    "Particles > 10um / 0.1L air"
+]
+
+trim_insidedata = insidedata.drop(columns=[col for col in columnstodrop if col in insidedata.columns])
+trim_outsidedata = outsidedata.drop(columns=[col for col in columnstodrop if col in outsidedata.columns])
+
+if trim_insidedata.all == insidedata.drop(columns=[col for col in columnstodrop if col in insidedata.columns]).all:
+    insidedata = trim_insidedata
+    outsidedata = trim_outsidedata
+
+def timenormalize(dataframe1):
+    # subtracts first value of first column in data frame against all other values in first column
+    # intention is to make time readable by removing epoch time difference
+    dataframe1.iloc[:,0]-=dataframe1.iloc[0,0]
+    # print(f"This is dataframetest: {dataframe1}")
+
+timenormalize(insidedata)
+timenormalize(outsidedata)
+
+def plotthat(dataframe1,dataframe2=pd.DataFrame(),variables='None'):
+    # plots data frame variables against first column in dataframe
+    # for all given variables in first column of first argument dataframe.
+    # If second argument given, plotthat will plot two dataframes.
+    # If third argument given, plotthat will try given columns as variables; otherwise, all 
+    # variables will be used.
+
+    if variables == 'None':
+        variables = (dataframe1.columns)[1:]
+    for var in variables:
+        # plt.figure(figsize=(10, 5))
+        plt.plot(dataframe1.iloc[:,0], dataframe1[var], label="DataFrame 1", linestyle="dashed")
+        plt.plot(dataframe2.iloc[:,0], dataframe2[var], label="DataFrame 2", linestyle="dashed")
+        plt.xlabel("Time (s)")
+        plt.ylabel(var)
+        plt.title(f"Time Series of {var}")
+        plt.legend()
+        plt.grid()
+        
+        plt.show()
+plotthat(insidedata,outsidedata)

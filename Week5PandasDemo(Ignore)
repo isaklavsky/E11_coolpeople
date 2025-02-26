@@ -43,7 +43,6 @@ def plotthat(dataframe1,dataframe2=pd.DataFrame(),variables='None'):
     if variables == 'None':
         variables = (dataframe1.columns)[1:]
     figure, axis = plt.subplots(2,2)
-    # for i in len()
     for var in variables:
         plt.figure(figsize=(10, 10))
         axis[0,0].plot(dataframe1.iloc[:,0], dataframe1[var], label="DataFrame 1", linestyle="dashed")
@@ -65,7 +64,7 @@ def plotthat(dataframe1,dataframe2=pd.DataFrame(),variables='None'):
         axis[1,1].set_title(f"Time Series of {var} for {dataframe1} and {dataframe2}")
         axis[1,1].legend()
         axis[1,1].grid()
-        plt.show()
+    plt.show()
         
 
        

@@ -54,9 +54,10 @@ pm25 = PM25_UART(uart, reset_pin)
 
 
 print(time.time())
-file = open('pm25.csv','w',newline = None)
+file = open('davis.csv','w',newline = None)
 csvwriter = csv.writer(file,delimiter=',')
-csvwriter.writerow(["Time", "Temp (C)", "Gas (Ohm)", "Humidity (%)", "PM 1.0: %d\t","PM2.5: %d\t","PM10: %d","Particles > 0.3um / 0.1L air", "Particles > 0.5um / 0.1L air","Particles > 1.0um / 0.1L air","Particles > 2.5um / 0.1L air","Particles > 5.0um / 0.1L air","Particles > 10um / 0.1L air"])
+# csvwriter.writerow(["Time", "Temp (C)", "Gas (Ohm)", "Humidity (%)", "PM 1.0: %d","PM 2.5: %d","PM 10: %d","Particles > 0.3um / 0.1L air", "Particles > 0.5um / 0.1L air","Particles > 1.0um / 0.1L air","Particles > 2.5um / 0.1L air","Particles > 5.0um / 0.1L air","Particles > 10um / 0.1L air"])
+csvwriter.writerow(["Time", "Temp (C)", "Gas (Ohm)", "Humidity (%)", "PM 1.0: %d","PM 2.5: %d","PM 10: %d"])
 print(sys.argv)
 seconds_agrv = float(sys.argv[1])
 
@@ -71,7 +72,7 @@ while i < seconds_agrv:
     #    except RuntimeError:
     #   print("Unable to read from sensor, retrying...")
     #  continue
-    csvwriter.writerow([Time,bme680.temperature,bme680.gas,bme680.relative_humidity, aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], aqdata["particles 03um"], aqdata["particles 05um"], aqdata["particles 10um"], aqdata["particles 25um"], aqdata["particles 50um"], aqdata["particles 100um"]])
+    csvwriter.writerow([Time,bme680.temperature,bme680.gas,bme680.relative_humidity, aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"]])
 print("Ended loop")
 file.close()
 

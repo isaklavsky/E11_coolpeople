@@ -1,4 +1,4 @@
-import RPi.GPIO as gp
+uimport RPi.GPIO as gp
 import datetime
 import pandas as pd
 import numpy as np
@@ -10,6 +10,7 @@ cnum=6
 # Placeholder channel number
 
 gp.setmode(gp.BCM)
+gp.setup(6, gp.IN, pull_up_down=gp.PUD_DOWN)
 file = open('RadData.csv','w',newline = None)
 csvwriter = csv.writer(file,delimiter=',')
 csvwriter.writerow(["Real Time","Seconds","Count"])

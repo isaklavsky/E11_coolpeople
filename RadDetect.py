@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import csv
 import time
 import sys
-cnum=0
+cnum=6
 # Placeholder channel number
 file = open('RadData.csv','w',newline = None)
 csvwriter = csv.writer(file,delimiter=',')

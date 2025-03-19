@@ -15,7 +15,7 @@ file = open('RadData.csv','w',newline = None)
 csvwriter = csv.writer(file,delimiter=',')
 csvwriter.writerow(["Real Time","Seconds","Count"])
 print("Time Set:" , sys.argv)
-seconds_agrv = float(sys.argv[1])
+seconds_argv = int(sys.argv[1])
 global count
 count=0
 

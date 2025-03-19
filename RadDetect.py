@@ -19,7 +19,7 @@ seconds_argv = int(sys.argv[1])
 global count
 count=0
 
-def my_callback():
+def my_callback(cnum):
     print("Callback Ran")
     global count
     count+=1

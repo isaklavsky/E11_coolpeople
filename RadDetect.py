@@ -1,4 +1,4 @@
-uimport RPi.GPIO as gp
+import RPi.GPIO as gp
 import datetime
 import pandas as pd
 import numpy as np

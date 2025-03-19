@@ -25,7 +25,7 @@ def my_callback():
     count+=1
 i=0
 gp.add_event_detect(cnum, gp.FALLING,callback=my_callback)
-while i < seconds_agrv:
+while i < seconds_argv:
     
     Time = time.time()
     if (i % 60 == 0):

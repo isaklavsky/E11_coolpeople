@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
 
+# Collects data from BME680 sensor 
+# and PM25 Sensor and creates a Table for it
 """
 Example sketch to connect to PM2.5 sensor with either I2C or UART.
 """
@@ -68,6 +70,7 @@ while i < seconds_agrv:
     Time = time.time()
     i += 1
     aqdata = pm25.read()
+    # Code for checking for runtime error
     # print(aqdata)
     #    except RuntimeError:
     #   print("Unable to read from sensor, retrying...")
@@ -79,7 +82,7 @@ file.close()
 
 
 
-
+# Unused extraneous code
 # print("Starting sensor readings at:", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
 #while i<5:

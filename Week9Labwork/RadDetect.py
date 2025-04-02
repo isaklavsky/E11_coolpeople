@@ -34,12 +34,12 @@ while i < seconds_argv:
     
     Time = time.time()
     if (i % 60 == 0):
-        csvwriter.writerow([i, count])
-        count=0
-    if i ==  seconds_argv:
         csvwriter.writerow([Time, i, count])
+        count=0
     i += 1
+    last=i
     time.sleep(1)
+csvwriter.writerow([Time, last, count])
 print("Ended loop")
 file.close()
 

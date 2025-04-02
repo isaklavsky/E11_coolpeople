@@ -16,7 +16,7 @@ cnum=6
 
 gp.setmode(gp.BCM)
 gp.setup(6, gp.IN, pull_up_down=gp.PUD_DOWN)
-file = open('RadData_Al2.csv','w',newline = None)
+file = open('RadData_Al3.csv','w',newline = None)
 csvwriter = csv.writer(file,delimiter=',')
 csvwriter.writerow(["Real Time","Seconds","Count"])
 print("Time Set:" , sys.argv)

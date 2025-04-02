@@ -33,7 +33,7 @@ gp.add_event_detect(cnum, gp.FALLING,callback=my_callback)
 while i < seconds_argv:
     
     Time = time.time()
-    if (i % 60 == 0):
+    if (i % 10== 0):
         csvwriter.writerow([Time, i, count])
         count=0
     i += 1
